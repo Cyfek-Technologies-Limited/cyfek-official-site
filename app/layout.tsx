@@ -6,9 +6,9 @@ import './globals.css'
 const archivo = Archivo({ subsets: ['latin'], variable: '--font-archivo' })
 
 export const metadata: Metadata = {
-  title: 'Arcform | Design, Engineering & Construction Software',
+  title: 'Cyfek Technologies | Software Products & Development Services',
   description:
-    'Arcform builds software for architects, engineers, builders, manufacturers and creators across South Africa and beyond.',
+    'Cyfek Technologies Limited builds software products like Seltra, Applylot and Bikespot, and develops websites and mobile apps for clients.',
   generator: 'v0.app',
 }
 

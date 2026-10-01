@@ -2,8 +2,7 @@ import { SiteHeader } from '@/components/site-header'
 import { Hero } from '@/components/hero'
 import { Industries } from '@/components/industries'
 import { Products } from '@/components/products'
-import { Stories } from '@/components/stories'
-import { AiBanner, About } from '@/components/ai-banner'
+import { ServicesBanner, About } from '@/components/ai-banner'
 import { FeatureCards, SiteFooter } from '@/components/site-footer'
 
 export default function Page() {
@@ -14,8 +13,7 @@ export default function Page() {
         <Hero />
         <Industries />
         <Products />
-        <Stories />
-        <AiBanner />
+        <ServicesBanner />
         <About />
         <FeatureCards />
       </main>
