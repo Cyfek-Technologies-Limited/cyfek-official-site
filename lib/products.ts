@@ -13,6 +13,7 @@ export type Product = {
   description: string
   color: string
   image: string
+  heroObject: string
   imageAlt: string
   url?: string
   status: 'Live' | 'Early access'
@@ -32,6 +33,7 @@ export const products: Product[] = [
       'Seltra connects brands with real people who share sponsored posts on their own social accounts. Advertisers reach authentic audiences, and posters earn money online with nothing more than data and a smartphone—no skills or experience needed.',
     color: 'bg-rose-600',
     image: '/images/prod-seltra.png',
+    heroObject: '/images/hero-obj-seltra.png',
     imageAlt: 'Woman holding a smartphone showing a sponsored social media post',
     url: 'https://seltra.app',
     status: 'Live',
@@ -58,6 +60,7 @@ export const products: Product[] = [
       'Applylot is an AI-powered job application platform that automates the application process. Manage your profiles, upload resumes, define your job preferences and let Applylot surface relevant career opportunities and apply on your behalf.',
     color: 'bg-indigo-600',
     image: '/images/prod-applylot.png',
+    heroObject: '/images/hero-obj-applylot.png',
     imageAlt: 'Professional reviewing a job application dashboard on a laptop',
     status: 'Early access',
     audiences: ['Job seekers', 'Graduates', 'Career switchers'],
@@ -85,6 +88,7 @@ export const products: Product[] = [
       'Bikespot makes electric mobility accessible. Browse quality e-bikes, check your eligibility in minutes and spread the cost with flexible payment plans—perfect for commuters, delivery riders and small businesses.',
     color: 'bg-emerald-600',
     image: '/images/prod-bikespot.png',
+    heroObject: '/images/hero-obj-bikespot.png',
     imageAlt: 'Modern electric bike parked on a city street at golden hour',
     status: 'Live',
     audiences: ['Commuters', 'Delivery riders', 'Small businesses'],

@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
-import { Check } from 'lucide-react'
+import { ArrowDown, Check, Clock, Download } from 'lucide-react'
 import { SiteHeader } from '@/components/site-header'
 import { SiteFooter } from '@/components/site-footer'
 import { ProductCard } from '@/components/products'
@@ -32,50 +32,125 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
     <>
       <SiteHeader />
       <main>
-        <nav aria-label="Breadcrumb" className="border-b border-border">
-          <ol className="mx-auto flex max-w-[1440px] gap-2 px-6 py-3 text-sm text-muted-foreground lg:px-10">
-            <li>
-              <Link href="/products" className="hover:underline">
-                Products
-              </Link>
-            </li>
-            <li aria-hidden="true">/</li>
-            <li aria-current="page" className="font-medium text-foreground">
-              {p.name}
-            </li>
-          </ol>
-        </nav>
-
-        <section className="mx-auto grid max-w-[1440px] items-center gap-10 px-6 py-16 lg:grid-cols-2 lg:px-10 lg:py-24">
-          <div>
-            <div className="flex items-center gap-3">
-              <span aria-hidden="true" className={`grid size-12 place-items-center text-2xl font-bold text-white ${p.color}`}>
+        <nav aria-label={`${p.name} navigation`} className="sticky top-0 z-30 border-b border-white/15 bg-[#1a1a1a] text-white">
+          <div className="mx-auto flex h-14 max-w-[1440px] items-center gap-8 px-6 lg:px-10">
+            <Link href={`/products/${p.slug}`} className="flex shrink-0 items-center gap-3 font-bold">
+              <span aria-hidden="true" className={`grid size-6 place-items-center rounded-sm text-sm font-bold text-white ${p.color}`}>
                 {p.name[0]}
               </span>
-              <span className="text-2xl font-semibold">{p.name}</span>
-            </div>
-            <p className="mt-6 text-sm font-semibold uppercase tracking-[0.15em] text-muted-foreground">{p.category}</p>
-            <h1 className="mt-3 text-balance text-5xl font-semibold leading-[1.05] lg:text-6xl">{p.tagline}</h1>
-            <p className="mt-6 max-w-xl text-pretty text-lg leading-relaxed text-muted-foreground">{p.description}</p>
-            <div className="mt-8 flex flex-wrap gap-3">
+              {p.name}
+            </Link>
+            <ul className="hidden items-center gap-10 font-semibold md:flex">
+              <li>
+                <a href="#overview" className="flex items-center gap-1 hover:underline">
+                  Overview <ArrowDown className="size-3.5" aria-hidden="true" />
+                </a>
+              </li>
+              <li>
+                <a href="#features" className="flex items-center gap-1 hover:underline">
+                  Features <ArrowDown className="size-3.5" aria-hidden="true" />
+                </a>
+              </li>
+              <li>
+                <a href="#how-heading" className="flex items-center gap-1 hover:underline">
+                  How it works <ArrowDown className="size-3.5" aria-hidden="true" />
+                </a>
+              </li>
+            </ul>
+            <div className="ml-auto flex items-center gap-4">
+              <Link href="/contact" className="hidden items-center gap-1.5 font-semibold hover:underline lg:flex">
+                <Clock className="size-4" aria-hidden="true" />
+                Contact sales
+              </Link>
+              <a
+                href="#features"
+                className="hidden h-8 items-center gap-2 rounded-sm border border-white px-3 text-sm font-semibold hover:bg-white hover:text-black sm:inline-flex"
+              >
+                <Download className="size-4" aria-hidden="true" />
+                See features
+              </a>
               <a
                 href={primaryCta.href}
                 {...(p.url ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
-                className="inline-flex h-12 items-center bg-black px-6 font-semibold text-white hover:bg-black/80"
+                className="inline-flex h-8 items-center rounded-sm bg-white px-3 text-sm font-semibold text-black hover:bg-white/85"
               >
                 {primaryCta.label}
               </a>
-              <a href="#features" className="inline-flex h-12 items-center border border-black px-6 font-semibold hover:bg-black hover:text-white">
-                See features
-              </a>
             </div>
           </div>
-          <div className="relative aspect-[4/3] overflow-hidden bg-surface">
-            <Image src={p.image} alt={p.imageAlt} fill priority sizes="(min-width: 1024px) 50vw, 100vw" className="object-cover" />
+        </nav>
+
+        <section id="overview" className="relative overflow-hidden bg-black text-white">
+          <Image
+            src="/images/hero-wireframe.png"
+            alt=""
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover"
+          />
+          <div className="relative mx-auto grid max-w-[1440px] items-center gap-6 px-6 pb-40 pt-14 lg:grid-cols-[1.05fr_1fr] lg:px-10 lg:pb-48 lg:pt-16">
+            <div>
+              <h1 className="text-balance text-4xl font-bold leading-[1.15] lg:text-[2.6rem]">
+                {p.name}: {p.tagline}
+              </h1>
+              <p className="mt-4 max-w-xl text-pretty text-lg leading-relaxed text-white/90">{p.description}</p>
+              <a
+                href={primaryCta.href}
+                {...(p.url ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+                className="mt-8 inline-flex h-10 items-center gap-2 rounded-sm border border-white px-5 text-lg font-semibold hover:bg-white hover:text-black"
+              >
+                <Download className="size-4" aria-hidden="true" />
+                {primaryCta.label}
+              </a>
+            </div>
+            <div className="relative mx-auto aspect-square w-full max-w-[520px] lg:-mr-10 lg:max-w-none">
+              <Image
+                src={p.heroObject}
+                alt={p.imageAlt}
+                fill
+                priority
+                sizes="(min-width: 1024px) 45vw, 90vw"
+                className="object-contain mix-blend-screen"
+              />
+            </div>
           </div>
         </section>
 
-        <section className="bg-black text-white">
+        <section aria-labelledby="get-heading" className="relative z-10 mx-auto -mt-28 max-w-[1440px] px-6 lg:px-10">
+          <div className="rounded-lg border border-white/25 bg-[#1a1a1a] p-8 text-white lg:p-10">
+            <h2 id="get-heading" className="text-3xl font-bold">
+              Get {p.name}
+            </h2>
+            <div className="mt-6 grid gap-6 md:grid-cols-3">
+              <div>
+                <p className="text-sm font-semibold uppercase tracking-[0.15em] text-white/60">Category</p>
+                <p className="mt-1 text-lg font-semibold">{p.category}</p>
+              </div>
+              <div>
+                <p className="text-sm font-semibold uppercase tracking-[0.15em] text-white/60">Status</p>
+                <p className="mt-1 text-lg font-semibold">{p.status}</p>
+              </div>
+              <div className="flex flex-wrap items-center gap-3 md:justify-end">
+                <a
+                  href={primaryCta.href}
+                  {...(p.url ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+                  className="inline-flex h-11 items-center rounded-sm bg-white px-5 font-semibold text-black hover:bg-white/85"
+                >
+                  {primaryCta.label}
+                </a>
+                <Link
+                  href="/contact"
+                  className="inline-flex h-11 items-center rounded-sm border border-white px-5 font-semibold hover:bg-white hover:text-black"
+                >
+                  Contact sales
+                </Link>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="mt-12 bg-black text-white">
           <div className="mx-auto flex max-w-[1440px] flex-wrap items-center gap-x-10 gap-y-4 px-6 py-8 lg:px-10">
             <p className="text-sm font-semibold uppercase tracking-[0.15em] text-brand">Built for</p>
             {p.audiences.map((a) => (
