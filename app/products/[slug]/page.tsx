@@ -89,8 +89,8 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
             sizes="100vw"
             className="object-cover"
           />
-          <div className="relative mx-auto grid max-w-[1440px] items-center gap-6 px-6 pb-40 pt-14 lg:grid-cols-[1.05fr_1fr] lg:px-10 lg:pb-48 lg:pt-16">
-            <div>
+          <div className="relative mx-auto flex min-h-[360px] max-w-[1440px] items-center px-6 pb-40 pt-14 lg:min-h-[420px] lg:px-10 lg:pb-48 lg:pt-16">
+            <div className="max-w-2xl">
               <h1 className="text-balance text-4xl font-bold leading-[1.15] lg:text-[2.6rem]">
                 {p.name}: {p.tagline}
               </h1>
@@ -103,16 +103,6 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
                 <Download className="size-4" aria-hidden="true" />
                 {primaryCta.label}
               </a>
-            </div>
-            <div className="relative mx-auto aspect-square w-full max-w-[520px] lg:-mr-10 lg:max-w-none">
-              <Image
-                src={p.heroObject}
-                alt={p.imageAlt}
-                fill
-                priority
-                sizes="(min-width: 1024px) 45vw, 90vw"
-                className="object-contain mix-blend-screen"
-              />
             </div>
           </div>
         </section>
