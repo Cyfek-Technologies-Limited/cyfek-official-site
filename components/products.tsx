@@ -15,7 +15,7 @@ export function ProductCard({ p }: { p: Product }) {
       </div>
       <p className="mt-4 flex-1 text-sm leading-relaxed text-muted-foreground">{p.summary}</p>
       <p className="mt-6 text-xs font-semibold uppercase tracking-[0.15em]">
-        <span className={p.status === 'Live' ? 'text-emerald-700' : 'text-amber-700'}>{p.status}</span>
+        <span className={p.status === 'Live' ? 'text-brand-ink' : 'text-muted-foreground'}>{p.status}</span>
       </p>
       <div className="mt-5 flex flex-wrap gap-3">
         <Link

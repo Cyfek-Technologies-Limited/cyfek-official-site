@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import Link from 'next/link'
 import { useState } from 'react'
 import { ChevronDown, Menu, X } from 'lucide-react'
@@ -15,9 +16,7 @@ const navItems = [
 export function Logo() {
   return (
     <Link href="/" className="flex items-center gap-2" aria-label="Cyfek home">
-      <span aria-hidden="true" className="grid size-7 place-items-center bg-brand text-sm font-bold text-brand-foreground">
-        C
-      </span>
+      <Image src="/images/cyfek-logo.png" alt="" width={36} height={36} className="size-9" priority />
       <span className="text-lg font-semibold tracking-[0.2em]">CYFEK</span>
     </Link>
   )

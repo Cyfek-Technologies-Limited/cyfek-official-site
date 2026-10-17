@@ -10,6 +10,7 @@ export const metadata: Metadata = {
   description:
     'Cyfek Technologies Limited builds software products like Seltra, Applylot and Bikespot, and develops websites and mobile apps for clients.',
   generator: 'v0.app',
+  icons: { icon: '/images/cyfek-logo.png', apple: '/images/cyfek-logo.png' },
 }
 
 export const viewport: Viewport = {

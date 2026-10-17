@@ -46,12 +46,14 @@
   --font-sans: var(--font-archivo), ui-sans-serif, system-ui, sans-serif;
   --color-brand: var(--brand);
   --color-brand-foreground: var(--brand-foreground);
+  --color-brand-ink: var(--brand-ink);
   --color-surface: var(--surface);
 }
 
 :root {
-  --brand: oklch(0.82 0.16 75);
-  --brand-foreground: oklch(0.145 0 0);
+  --brand: #00d1a0;
+  --brand-foreground: #05080f;
+  --brand-ink: #007a5e;
   --surface: oklch(0.96 0.005 80);
 }
 

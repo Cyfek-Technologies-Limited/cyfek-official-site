@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import Link from 'next/link'
 import { products, site } from '@/lib/products'
 
@@ -71,7 +72,10 @@ export function SiteFooter() {
       <div className="mx-auto max-w-[1440px] px-6 py-16 lg:px-10">
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
           <div>
-            <span className="text-lg font-semibold tracking-[0.2em]">CYFEK</span>
+            <span className="flex items-center gap-2">
+              <Image src="/images/cyfek-logo.png" alt="" width={40} height={40} className="size-10" />
+              <span className="text-lg font-semibold tracking-[0.2em]">CYFEK</span>
+            </span>
             <p className="mt-4 max-w-xs text-sm text-white/70">Software products and services for growing businesses.</p>
             <a href={`mailto:${site.contactEmail}`} className="mt-4 inline-block text-sm hover:text-brand">
               {site.contactEmail}

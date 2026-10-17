@@ -65,7 +65,7 @@ export default function ServicesPage() {
             <ol className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
               {process.map((s, i) => (
                 <li key={s.title} className="bg-background p-8">
-                  <span className="text-5xl font-semibold text-brand">{String(i + 1).padStart(2, '0')}</span>
+                  <span className="text-5xl font-semibold text-brand-ink">{String(i + 1).padStart(2, '0')}</span>
                   <h3 className="mt-4 text-xl font-semibold">{s.title}</h3>
                   <p className="mt-2 text-muted-foreground">{s.desc}</p>
                 </li>
