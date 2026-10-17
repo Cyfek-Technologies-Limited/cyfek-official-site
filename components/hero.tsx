@@ -5,12 +5,12 @@ export function Hero() {
   return (
     <section className="relative isolate min-h-[560px] overflow-hidden bg-black text-white lg:min-h-[640px]">
       <Image
-        src="/images/hero-team.jpg"
-        alt="Two developers reviewing code together on a laptop in a shared office"
+        src="/images/hero-office.jpg"
+        alt="A team of professionals reviewing documents together around a table in a modern office"
         fill
         priority
         sizes="100vw"
-        className="-z-10 object-cover object-right opacity-80"
+        className="-z-10 object-cover object-center opacity-80"
       />
       <div className="absolute inset-0 -z-10 bg-gradient-to-r from-black via-black/60 to-transparent" />
       <div className="mx-auto flex min-h-[560px] max-w-[1440px] flex-col justify-end px-6 pb-16 lg:min-h-[640px] lg:px-10 lg:pb-24">
