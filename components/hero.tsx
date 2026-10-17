@@ -5,7 +5,7 @@ export function Hero() {
   return (
     <section className="relative isolate min-h-[560px] overflow-hidden bg-black text-white lg:min-h-[640px]">
       <Image
-        src="/images/hero.png"
+        src="/images/hero-team-night.png"
         alt="A software team collaborating over code on laptops and monitors in a modern office at night"
         fill
         priority
