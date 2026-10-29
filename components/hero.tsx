@@ -1,5 +1,5 @@
-import Image from 'next/image'
-import Link from 'next/link'
+import Image from "next/image";
+import Link from "next/link";
 
 export function Hero() {
   return (
@@ -14,13 +14,16 @@ export function Hero() {
       />
       <div className="absolute inset-0 -z-10 bg-gradient-to-r from-black via-black/60 to-transparent" />
       <div className="mx-auto flex min-h-[560px] max-w-[1440px] flex-col justify-end px-6 pb-16 lg:min-h-[640px] lg:px-10 lg:pb-24">
-        <p className="text-sm font-semibold uppercase tracking-[0.15em] text-brand">Cyfek Technologies</p>
+        <p className="text-sm font-semibold uppercase tracking-[0.15em] text-brand">
+          Cyfek Technologies
+        </p>
         <h1 className="mt-4 max-w-3xl text-balance text-5xl font-semibold leading-[1.05] lg:text-7xl">
           Software that moves business forward
         </h1>
         <p className="mt-6 max-w-xl text-pretty text-lg text-white/85">
-          We build products for marketing, HR, mobility, real estate and automation—and we build custom websites and
-          mobile apps for teams like yours.
+          We build products for marketing, HR, mobility, real estate and
+          automation—and we build custom websites and mobile apps for teams like
+          yours.
         </p>
         <div className="mt-8 flex flex-wrap gap-3">
           <Link
@@ -38,5 +41,5 @@ export function Hero() {
         </div>
       </div>
     </section>
-  )
+  );
 }
